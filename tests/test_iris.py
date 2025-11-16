@@ -10,6 +10,11 @@ def test_load_data():
     assert len(data) > 0
 
 
+def test_data_shape():
+    X_train, _, _, _ = load_iris_data()
+    assert X_train.shape[1] == 4
+
+
 def test_model_training():
     model = IrisClassifier()
     model.train([[5.1, 3.5, 1.4, 0.2], [6.7, 3.0, 5.2, 2.3]], [0, 2])

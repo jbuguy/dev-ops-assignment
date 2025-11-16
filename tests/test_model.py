@@ -1,8 +1,3 @@
-import os
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
-
 import numpy as np
 
 from src.data_loader import load_iris_data
@@ -32,7 +27,9 @@ class TestIrisClassifier:
         self.classifier.train(self.X_train, self.y_train)
         predictions = self.classifier.predict(self.X_test[:5])
         assert len(predictions) == 5
-        assert all(isinstance(pred, (np.int32, np.int64, int)) for pred in predictions)
+        assert all(
+            isinstance(pred, (np.int32, np.int64, int)) for pred in predictions
+            )
 
     def test_model_evaluation(self):
         """Test model evaluation functionality"""

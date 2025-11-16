@@ -16,6 +16,8 @@ def test_load_iris_data_shapes():
     assert y_train.ndim == 1
     assert y_test.ndim == 1
     assert X_train.shape[0] > 0
+
+    
     assert X_test.shape[0] > 0
 
 
